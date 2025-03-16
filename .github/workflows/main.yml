@@ -32,7 +32,7 @@ jobs:
       - name: Rodar testes do frontend
         run: npm test
 
-    - name: Build do backend com Maven
-  run: |
-    chmod +x mvnw
-    ./mvnw verify
+      - name: Build do backend com Maven
+        run: |
+          chmod +x mvnw
+          ./mvnw verify
