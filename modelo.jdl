@@ -1,0 +1,25 @@
+entity Aluno {
+  nome String required
+}
+
+entity Meta {
+  valor Integer required
+  area AreaDoEnem required
+}
+
+enum AreaDoEnem {
+  LINGUAGENS,
+  CIENCIAS_HUMANAS,
+  CIENCIAS_NATUREZA,
+  MATEMATICA
+}
+
+relationship OneToMany {
+  Aluno{metas} to Meta{aluno}
+}
+
+paginate Meta with pagination
+paginate Aluno with pagination
+
+service Aluno with serviceClass
+service Meta with serviceClass
